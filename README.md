@@ -63,6 +63,15 @@ ex)
 `google.maps.MapTypeId.ROADMAP` → `mapTypeId: 'ROADMAP'`
 
 
+## Event
+
+### lazy.map.appeared
+
+地図の読み込みが完了したときに発生します。
+
+callbackの引数は二つで1つめが`google.maps`オブジェクトで2つめがgoogle.maps.Mapのインスタンス(地図オブジェクト)です。
+
+
 ## 依存
 
 jQuery, EventEmitter と依存してます。　ごめんなさい。
