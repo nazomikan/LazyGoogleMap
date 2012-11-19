@@ -75,7 +75,7 @@ ex)
 callbackの引数は二つで1つめが`google.maps`オブジェクトで2つめがgoogle.maps.Mapのインスタンス(地図オブジェクト)です
 
 
-### lazy.map.faild
+### lazy.map.failed
 
 地図の読み込みが何らかの理由で失敗したときに発生します
 
