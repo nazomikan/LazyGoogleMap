@@ -59,4 +59,10 @@ conf ex) キャンバスサイズ, バージョン設定, キャンバスなど
 ex)
 
 `center: new google.maps.LatLng(A, B)` → `center: [A, B]`
+
 `google.maps.MapTypeId.ROADMAP` → `mapTypeId: 'ROADMAP'`
+
+
+## 依存
+
+jQuery, EventEmitter と依存してます。　ごめんなさい。
