@@ -70,7 +70,7 @@
       if (!$text.get(0)) {
         $text = $(doc.createTextNode(text));
       }
-      $(document.body).append($text);
+      $(doc.body).append($text);
     };
     return $.getScript(resourceUrl);
   };
