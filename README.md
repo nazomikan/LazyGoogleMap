@@ -74,4 +74,6 @@ callbackの引数は二つで1つめが`google.maps`オブジェクトで2つめ
 
 ## 依存
 
-jQuery, EventEmitter と依存してます。　ごめんなさい。
+jQuery, EventEmitter と依存してます。 横着しました、ごめんなさい。
+
+でもそれほど深刻に依存してるわけじゃないので外したい人は自分で外してください。
