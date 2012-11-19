@@ -4,6 +4,7 @@
         EventEmitter.call(this);
         // set on build time
         this.googleMap = null;
+        this._alreadyAppear = false;
     }
 
     LazyGoogleMap.prototype = Object.create(EventEmitter.prototype);
@@ -29,13 +30,13 @@
         }, option);
     };
 
-    LazyGoogleMap.prototype.appear = function appear(gmOption) {
+    LazyGoogleMap.prototype.appear = function (gmOption) {
         var that = this, option = this.option;
-        if (appear.alreadyAppear) {
+        if (this._alreadyAppear) {
             return false;
         }
         gmOption = gmOption || {};
-        appear.alreadyAppear = true;
+        this._alreadyAppear = true;
         option.canvas.css({width: option.width, height: option.height});
 
         this.readResource().done(function getMaps() {
@@ -62,6 +63,9 @@
             gmOption = that.bindType(google.maps, gmOption);
             map = new google.maps.Map(option.canvas.get(0), gmOption);
             that.emit('lazy.map.appeared', google.maps, map);
+        }).fail(function () {
+            doc.write = doc.___o_write_o___; 
+            that.emit('lazy.map.failed', 'google mapsが読み込めませんでした。');
         });
     };
 
