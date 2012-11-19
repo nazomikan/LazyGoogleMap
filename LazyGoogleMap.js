@@ -1,4 +1,4 @@
-(function (win, doc) {
+(function (win, doc, $) {
 
   function LazyGoogleMap() {
     EventEmitter.call(this);
@@ -119,5 +119,5 @@
   };
 
   // export namespaces;
-  win.app.core.LazyGoogleMap = LazyGoogleMap;
-}(window, document));
+  win.LazyGoogleMap = LazyGoogleMap;
+}(window, document, jQuery));
