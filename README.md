@@ -17,16 +17,19 @@ sample code
     lazyMap.setConfig({
         width: 600,
         height: 600,
-        version: 3.8,
+        version: 3.8, // versionは3.x系なら大抵指定できる 2.x系は無理
         canvas: $('#mapCanvas')
     });
 
     lazyMap.appear(gmOption);
 
     lazyMap.on('lazy.map.appeared', function (gm, map) {
-        alert('読み込み完了')
+        alert('読み込み完了');
     });
 
+    lazyMap.on('lazy.map.faild', function (errMsg) {
+        alert('Error:' + errMsg);
+    });
 
 ## API
 
@@ -67,9 +70,18 @@ ex)
 
 ### lazy.map.appeared
 
-地図の読み込みが完了したときに発生します。
+地図の読み込みが完了したときに発生します
 
-callbackの引数は二つで1つめが`google.maps`オブジェクトで2つめがgoogle.maps.Mapのインスタンス(地図オブジェクト)です。
+callbackの引数は二つで1つめが`google.maps`オブジェクトで2つめがgoogle.maps.Mapのインスタンス(地図オブジェクト)です
+
+
+### lazy.map.faild
+
+地図の読み込みが何らかの理由で失敗したときに発生します
+
+callbackの引数は1つでエラーのメッセージです
+
+特に情報のあるメッセージじゃないので飾りです、期待しないでください
 
 
 ## 依存
